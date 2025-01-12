@@ -1,4 +1,4 @@
-package com.sashi.codechallenge
+package com.sashi.codechallenge.features
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
