@@ -56,6 +56,7 @@ android {
     }
     buildFeatures {
         compose = true
+        dataBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -76,9 +77,13 @@ val retrofitVersion = "2.11.0"
 val gsonVersion = "2.11.0"
 val okhttpVersion = "4.12.0"
 val hiltVersion = "2.51.1"
+val hiltCompilerVersion = "1.2.0"
+val lifecycleViewModelVersion = "2.8.7"
+val hiltLifecycleViewModelVersion = "1.0.0-alpha03"
 val jUnitVersion = "4.13.2"
 val jUnitExtVersion = "1.2.1"
 val espressoCoreVersion = "3.6.1"
+val recyclerViewVersion = "1.3.2"
 
 dependencies {
 
@@ -90,6 +95,7 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
+    implementation("androidx.recyclerview:recyclerview:$recyclerViewVersion")
 
     // Network
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
@@ -102,6 +108,9 @@ dependencies {
     //DI
     implementation("com.google.dagger:hilt-android:$hiltVersion")
     kapt("com.google.dagger:hilt-android-compiler:$hiltVersion")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleViewModelVersion")
+    implementation("androidx.hilt:hilt-lifecycle-viewmodel:$hiltLifecycleViewModelVersion") // Optional for older setups
+    kapt("androidx.hilt:hilt-compiler:$hiltCompilerVersion")
 
     // Test
     testImplementation("junit:junit:$jUnitVersion")
